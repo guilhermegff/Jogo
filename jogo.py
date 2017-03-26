@@ -7,7 +7,6 @@ class Computador(object):
     def __init__(self):
 	self.computador = "computador criado"
 	self.jogo1 = Jogo()
-	self.counts = 0
 	
     def jogar(self, jogo):
 	self.jogo1.urna1.medaBola(self.jogo1.urna1.bola1)
@@ -67,8 +66,8 @@ class Bola(object):
 	self.bola = "bola criada"
 
     def random(self):
-	numero = randint(1, 20)
-	return numero
+	self.numero = randint(1, 20)
+	return self.numero
 
 	
 
