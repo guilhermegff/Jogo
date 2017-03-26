@@ -2,33 +2,6 @@
 
 from random import randint
 
-class Computador(object):
-	
-    def __init__(self):
-	self.computador = "computador criado"
-	self.jogo1 = Jogo()
-	
-    def jogar(self, jogo):
-	self.jogo1.urna1.medaBola(self.jogo1.urna1.bola1)
-	self.jogo1.alvo1.medaValor(self.jogo1.urna1)
-	self.jogo1.medaAlvo(self.jogo1.alvo1)
-	
-	print "A urna sorteou uma bola " + str(self.jogo1.urna1.valor) + " , qual o valor do alvo?"
-	
-	palpite = raw_input("> ")
-
-	if str(palpite) == str(self.jogo1.acerto):
-	   print "Ganhou"
-	   
-	else:
-   	   print "Errou - " + "Alvo: " + str(self.jogo1.acerto) + " " + " Palpite: " + str(palpite)
-	   if self.jogo1.acerto <= 100:
-	      self.jogo1.alvo1.soma = self.jogo1.acerto
-	      self.jogar(self.jogo1)	
-	   else:
-	      print "Perdeu!"
-	      return   
-
 class Jogo(object):
 
     def __init__(self):
@@ -68,6 +41,33 @@ class Bola(object):
     def random(self):
 	self.numero = randint(1, 20)
 	return self.numero
+
+class Computador(object):
+	
+    def __init__(self):
+	self.computador = "computador criado"
+	self.jogo1 = Jogo()
+	
+    def jogar(self, jogo):
+	self.jogo1.urna1.medaBola(self.jogo1.urna1.bola1)
+	self.jogo1.alvo1.medaValor(self.jogo1.urna1)
+	self.jogo1.medaAlvo(self.jogo1.alvo1)
+	
+	print "A urna sorteou uma bola " + str(self.jogo1.urna1.valor) + " , qual o valor do alvo?"
+	
+	palpite = raw_input("> ")
+
+	if str(palpite) == str(self.jogo1.acerto):
+	   print "Ganhou"
+	   
+	else:
+   	   print "Errou - " + "Alvo: " + str(self.jogo1.acerto) + " " + " Palpite: " + str(palpite)
+	   if self.jogo1.acerto <= 100:
+	      self.jogo1.alvo1.soma = self.jogo1.acerto
+	      self.jogar(self.jogo1)	
+	   else:
+	      print "Perdeu!"
+	      return 
 
 	
 
